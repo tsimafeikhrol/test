@@ -1,13 +1,18 @@
-<property name="package.file" value="hostnameVerification.war" />
-<property name="temp.dir" value="HostnameVerification" />
-<property name="temp.dir.web-inf" value="HostnameVerification/web/WEB-INF" />
-<property name="pages.dir" value="HostnameVerification/src" />
-<property name="lib.dir" value="HostnameVerification/web/WEB-INF/lib" />
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="build-war" basedir="." default="build">
+		<property name="package.file" value="hostnameVerification.war" />
+		<property name="temp.dir" value="." />
+		<property name="temp.dir.web-inf" value="./web/WEB-INF" />
+		<property name="pages.dir" value="./src" />
+		<property name="lib.dir" value="./web/WEB-INF/lib" />
 
-<!-- with all resources in place, create the war file -->
-<war destfile="${package.file}" 
-     webxml="${temp.dir.web-inf}/web.xml" 
-     basedir="${temp.dir}"
-  <fileset dir="${pages.dir}"/>
-  <lib dir="${lib.dir}" />
-</war>
+		<!-- with all resources in place, create the war file -->
+	<target name="build">
+		<war destfile="${package.file}" 
+			 webxml="${temp.dir.web-inf}/web.xml" 
+			 basedir="${temp.dir}">
+			<fileset dir="${pages.dir}"/>
+			<lib dir="${lib.dir}" />
+		</war>
+	</target>
+</project>
