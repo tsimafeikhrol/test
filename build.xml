@@ -18,7 +18,7 @@
 	</target>
 	
 	<target name="war" depends="compile">
-		<war destfile="dist/HostnameVerification.war" webxml="web/WEB-INF/web.xml">
+		<war destfile="dist/ROOT.war" webxml="web/WEB-INF/web.xml">
 			<fileset dir="web"/>
 			<lib dir="web/WEB-INF/lib"/>
 			<classes dir="build/classes"/>
